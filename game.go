@@ -1,8 +1,8 @@
 package csgsi
 
-import(
-	"net/http"
+import (
 	"io"
+	"net/http"
 )
 
 // Game ...
@@ -12,7 +12,7 @@ type Game struct {
 }
 
 // Returns a new Game object.
-func New(size int) *Game{
+func New(size int) *Game {
 	return &Game{Channel: make(chan State, size)}
 }
 
