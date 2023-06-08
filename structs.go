@@ -7,6 +7,7 @@ type State struct {
 	Player           *player
 	AllPlayers       map[string]*player // allplayers_*: steamid64 ...
 	Phase_Countdowns *phase
+	Grenades         map[string]*grenades
 	Bomb             *bomb
 	Previously       *State
 	Added            *State
@@ -89,6 +90,30 @@ type bomb struct {
 	Position  string
 	Player    string
 	Countdown string
+}
+
+type grenades struct {
+	DecoySmokeGrenade struct {
+		Owner      int
+		Type       string
+		Position   string
+		Velocity   string
+		Lifetime   string
+		Effecttime string
+	}
+	DefaultGrenade struct {
+		Owner    int
+		Type     string
+		Position string
+		Velocity string
+		Lifetime string
+	}
+	FireBombGrenade struct {
+		Owner    int
+		Type     string
+		Lifetime string
+		Flames   map[string]string
+	}
 }
 
 // player_match_stats
